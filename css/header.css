@@ -1,0 +1,333 @@
+#wrap{
+    position: relative;
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 130px;
+    box-sizing: border-box;
+    transition: height .5s;
+    
+}
+header.show{
+    height: 550px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    border-radius: 0 0px 50px 50px;
+    box-shadow: 0px 4px 5px 0px #d7d7d7;
+}
+header.show .headerInner{
+    border-bottom: 1px solid #eee;
+}
+
+header.fixed{
+    position: fixed;
+}
+/* 헤더 최상단 */
+header .headerTop {
+    height: 30px;
+    line-height: 30px; 
+    position: absolute;
+    top:0;
+    right: 0;
+    border-bottom: 1px solid #e8e8e8;
+    width: 100%;
+    z-index: 100;
+}
+header .headerTop ul{
+    /* width: 1200px;
+    margin: 0 auto; */
+    text-align: right;
+    padding: 0 80px;
+}
+header .headerTop ul li{
+    display:inline-block;
+    font-size: 14px;
+}
+header .headerTop ul li:first-child:after{
+    content:"";
+    display: inline-block;
+    width:1px;height: 10px;
+    background: #d7d7d7;
+    margin: 0 5px 0 10px;
+}
+header .headerTop ul li a span{
+    vertical-align: middle;
+    margin-left: 5px;
+}
+header .headerTop ul li a span img{
+    width: 14px;
+    height: 14px;
+}
+header .headerInner {
+    /*max-width: 1200px;margin: 0 auto;*/padding: 30px 80px 0;
+    display: flex;height: 100px;align-items: center;
+    /*justify-content: space-around;*/
+    justify-content: space-between;
+    /* justify-content: space-evenly; */
+}
+
+
+header .logo{
+    position: relative;
+    z-index: 100;
+}
+header .logo a img{
+   display: block;
+}
+/* 헤더 gnb */
+header .headerInner .gnb{
+    width: 100%;
+}
+header .headerInner .gnb ul {
+    display: flex;
+    justify-content: center;
+
+}
+header .headerInner .gnb ul li.top{
+    position: relative; 
+    height: 23px;
+    line-height: 23px;
+    padding: 38px 30px;
+    transition: all .3 ease;
+}
+header .headerInner .gnb ul li.top a.rox{    
+    font-size:18px;    
+    transition:all .3s ease;
+    position: relative;
+    padding: 38px 0px;
+    font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+header .headerInner .gnb ul li.top .sub{
+    position: absolute;
+    top:100%;
+    left: 0;  
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+   
+    visibility: hidden;
+    height: 350px;
+    padding: 20px 0 0;
+   
+}
+ header .headerInner .gnb ul li.top .sub.on{
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s .3s;
+} 
+
+header .headerInner .gnb ul li.top .sub a{
+    display: block;
+    margin: 10px 0 0 30px;
+    transition: all .3s ease-in-out;
+    font-size: 15px;
+}
+
+header .headerInner .gnb ul li.top .sub a:hover{
+    color: #e0462e;
+}
+header .headerInner .gnb ul li.top .sub li a{
+    display: block;
+    padding: 0;
+    
+}
+
+/* gnb 호버 메뉴 */
+
+header .headerInner .gnb ul li.top:hover a.rox{    
+    color: #e0462e;
+    
+}
+header .headerInner .gnb ul li.top a.rox::before{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;    
+    height: 2px;
+    background: #e0462e;
+    transition: all .3s ease;
+}
+
+header .headerInner .gnb ul li.top:hover a.rox::before{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;    
+    height: 2px;
+    background: #e0462e;
+    transition: all .3s ease;
+    
+}
+header .headerInner .gnb ul li.top:hover::after{
+    content:"";
+    position: absolute;
+    top:40%;
+    right: 20px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    background: #e0462e;
+}
+
+header .headerInner .lan {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 100;
+}
+
+
+/* 헤더 랭귀지 */
+header .headerInner .lan select {
+    background: url("../img/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.svg") center right no-repeat;
+    width: 55px;
+    background-size:25px auto;font-size: 16px;
+    font-weight: 600;
+    border: 0;
+}
+header .headerInner .lan .menu{
+    position: relative;
+}
+header .headerInner .lan .menu a{
+    display: block;
+    
+    position: absolute;
+    width: 25px;
+    height: 25px;
+}
+
+
+
+header .headerInner .lan .menu a.menu_btn.active > span:nth-child(1){
+    transform: rotate(45deg);
+    
+    margin-top: 9px;
+    transition: all .5s;
+}
+
+header .headerInner .lan .menu a.menu_btn.active > span:nth-child(2){
+    opacity: 0;
+}
+header .headerInner .lan .menu a.menu_btn.active > span:nth-child(3){
+    transform: rotate(-45deg);
+    margin-top: -18px;
+    transition: all .5s;
+}
+header .headerInner .lan .menu span{
+    content:"";
+    display:block; 
+    width: 25px;
+    height: 2px;
+    background: #000;
+    transition: all .5s;
+}
+header .headerInner .lan .menu span:nth-child(1){
+    margin-bottom: 7px;
+}
+header .headerInner .lan .menu span:nth-child(2){
+    display: block; margin-bottom: 7px;
+}
+
+/* 헤더 햄버거 메뉴 */
+
+header .drop{ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+   
+}
+header .drop.on{
+    opacity: 1;
+    visibility: visible;
+    
+    
+}
+
+header .drop ul.deps01{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+header .drop ul.deps01 > li{
+    border: 1px solid rgba(232,232,232, .8);
+    border-radius: 30px;
+    float: left;
+    width: 20%;
+    margin-right: 15px;
+    height: 400px;
+    transition: all .5s;
+    padding: 35px 15px 0;
+    
+}
+header .drop ul.deps01 > li:last-child{
+    margin-right: 0;
+}
+header .drop ul.deps01 > li a{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+}
+header .drop ul.deps01 > li:hover{
+    box-shadow: 0px 5px 24px 5px #e7e7e7;
+    transform: translateY(-10px);
+    
+
+}
+
+header .drop ul.deps01 > li:hover h2 > a{
+    color: #e0462e;
+    font-weight: 400;
+}
+
+header .drop ul.deps02{
+    margin: 20px 0 0;
+}
+header .drop ul.deps02 > li a{
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 0;
+    font-weight: 400;
+    transition: all .5s;
+   
+}
+header .drop ul.deps02 > li a.color_box{
+    color:#888;
+
+}
+
+header .drop ul.deps02 > li a.color_box:hover{
+    color:#888;
+}
+
+header .drop ul.deps02 > li a:hover{
+    color:#e0462e;
+}
+
+header .drop ul.deps02 > li a:hover .material-symbols-outlined{
+    opacity: 1;
+}
+
+header .drop ul.deps02 > li .material-symbols-outlined{
+    float: right;
+    font-size: 16px;
+    opacity: 0;
+    font-weight: 600;
+    color:#e0462e;
+}
